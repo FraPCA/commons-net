@@ -62,7 +62,7 @@ public class TFTPServerPathTest {
             } catch (IOException e) {
                 if (retry) {
                     try {
-                        Thread.sleep(500);
+                        Thread.sleep(1000);
                     } catch (InterruptedException e1) {
                         fail(e);
                     }
