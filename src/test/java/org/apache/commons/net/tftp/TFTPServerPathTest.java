@@ -56,9 +56,7 @@ public class TFTPServerPathTest {
     private static void deleteFile(final Path path, final boolean retry) throws IOException {
         if (path != null) {
             try {
-                if (Files.exists(path)) {
-                    Files.delete(path);
-                }
+                Files.deleteIfExists(path);
             } catch (IOException e) {
                 if (retry) {
                     try {
@@ -66,9 +64,7 @@ public class TFTPServerPathTest {
                     } catch (InterruptedException e1) {
                         fail(e);
                     }
-                    if (Files.exists(path)) {
-                        Files.delete(path);
-                    }
+                    Files.deleteIfExists(path);
                 }
                 throw e;
             }
